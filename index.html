@@ -44,5 +44,8 @@
 <div class="modal-overlay" id="modalLang" style="display:none"><div class="modal modal-sm"><div class="modal-header"><h3 data-i18n="language">Language</h3><button class="close-btn" id="btnCloseLang">&times;</button></div><div class="modal-body"><button class="lang-btn" data-lang="en">English</button><button class="lang-btn" data-lang="zh">&#20013;&#25991;</button><button class="lang-btn" data-lang="es">Espa&#241;ol</button><button class="lang-btn" data-lang="ja">&#26085;&#26412;&#35486;</button><button class="lang-btn" data-lang="de">Deutsch</button><button class="lang-btn" data-lang="fr">Fran&#231;ais</button></div></div></div>
 </div>
 <script src="app.js"></script>
+    <script>
+    if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+    </script>
 </body>
 </html>
