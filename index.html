@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="theme-color" content="#0369A1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Renovate - Home Project Manager</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+<div id="app">
+<header class="header">
+<div class="header-top"><div class="logo"><span class="logo-icon">&#128296;</span><span class="logo-text">Renovate</span></div><button class="icon-btn" id="btnLang">&#127760;</button></div>
+</header>
+<main>
+<section id="viewRooms" class="view active">
+<div class="section-header"><h2 data-i18n="projects">Projects</h2><button class="add-btn" id="btnAddProject">+</button></div>
+<div id="projectList" class="project-list"></div>
+</section>
+<section id="viewProject" class="view">
+<div class="section-header"><button class="back-btn" id="btnBack">&#8249; <span data-i18n="projects">Projects</span></button></div>
+<h2 class="proj-title" id="projTitle"></h2>
+<div class="budget-bar" id="budgetBar"></div>
+<div class="section-header" style="margin-top:14px"><h3 data-i18n="tasks">Tasks</h3><button class="add-btn" id="btnAddTask">+</button></div>
+<div id="taskList" class="task-list"></div>
+</section>
+</main>
+<!-- Add Project Modal -->
+<div class="modal-overlay" id="modalAddProject" style="display:none"><div class="modal"><div class="modal-header"><h3 data-i18n="new_project">New Project</h3><button class="close-btn" id="btnCloseProj">&times;</button></div><div class="modal-body">
+<div class="form-group"><label data-i18n="project_name">Room / Project</label><input type="text" id="inputProjName" class="form-input" placeholder="e.g. Kitchen Remodel"></div>
+<div class="form-group"><label data-i18n="budget">Budget ($)</label><input type="number" id="inputProjBudget" class="form-input" placeholder="5000" step="100"></div>
+<button class="primary-btn" id="btnSaveProj" data-i18n="save">Save</button>
+</div></div></div>
+<!-- Add Task Modal -->
+<div class="modal-overlay" id="modalAddTask" style="display:none"><div class="modal"><div class="modal-header"><h3 data-i18n="new_task">New Task</h3><button class="close-btn" id="btnCloseTask">&times;</button></div><div class="modal-body">
+<div class="form-group"><label data-i18n="task_name">Task</label><input type="text" id="inputTaskName" class="form-input" placeholder="e.g. Paint walls"></div>
+<div class="form-row"><div class="form-group half"><label data-i18n="cost">Cost ($)</label><input type="number" id="inputTaskCost" class="form-input" placeholder="0" step="10"></div><div class="form-group half"><label data-i18n="status">Status</label><select id="inputTaskStatus" class="form-input"><option value="todo">To Do</option><option value="doing">In Progress</option><option value="done">Done</option></select></div></div>
+<button class="primary-btn" id="btnSaveTask" data-i18n="save">Save</button>
+</div></div></div>
+<!-- Language -->
+<div class="modal-overlay" id="modalLang" style="display:none"><div class="modal modal-sm"><div class="modal-header"><h3 data-i18n="language">Language</h3><button class="close-btn" id="btnCloseLang">&times;</button></div><div class="modal-body"><button class="lang-btn" data-lang="en">English</button><button class="lang-btn" data-lang="zh">&#20013;&#25991;</button><button class="lang-btn" data-lang="es">Espa&#241;ol</button><button class="lang-btn" data-lang="ja">&#26085;&#26412;&#35486;</button><button class="lang-btn" data-lang="de">Deutsch</button><button class="lang-btn" data-lang="fr">Fran&#231;ais</button></div></div></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
